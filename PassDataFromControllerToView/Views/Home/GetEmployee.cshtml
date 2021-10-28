@@ -15,26 +15,34 @@
         <th>Is Eligible For Loan</th>
         <th>Salary</th>
         <th>Created By</th>
-        <th>Created Date</th>
+        <th>Action</th>
     </tr>
-    <tr>
-        <td>@ViewBag.Employee.EmployeeID</td>
-        <td>@ViewBag.Employee.EmployeeName</td>
-        <td>@ViewBag.Employee.Address</td>
-        <td>@ViewBag.Employee.DateOfJoining</td>
-        <td>
-        @if(ViewBag.Employee.MartialStatus == 1)
-        {
-            <p>Married</p>
-        }
-        else
-        {
-            <p>Single</p>
-        }
-        </td>
-        <td>@ViewBag.Employee.IsEligibleForLoan</td>
-        <td>@ViewBag.Employee.Salary</td>
-        <td>@ViewBag.Employee.CreatedBy</td>
-        <td>@ViewBag.Employee.CreatedDate</td>
-    </tr>
+
+    @foreach (var employee in ViewBag.Employees)
+    {
+        <tr>
+            <td>@employee.EmployeeID</td>
+            <td>@employee.EmployeeName</td>
+            <td>@employee.Address</td>
+            <td>@employee.DateOfJoining</td>
+            <td>
+                @if (employee.MartialStatus == 1)
+                {
+                    <p>Married</p>
+                }
+                else
+                {
+                    <p>Single</p>
+                }
+            </td>
+            <td>@employee.IsEligibleForLoan</td>
+            <td>@employee.Salary</td>
+            <td>@employee.CreatedBy</td>
+            <td>
+                <button type="button" class="btn btn-primary">Edit</button> |
+                <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    }
+
 </table>

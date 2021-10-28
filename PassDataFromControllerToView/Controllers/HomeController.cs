@@ -20,19 +20,55 @@ namespace PassDataFromControllerToView.Controllers
 
         public ActionResult GetEmployee()
         {
-            Employee employee = new Employee()
+            List<Employee> employees = new List<Employee>()
             {
-                EmployeeID = 1,
-                EmployeeName = "Marius Antohi",
-                DateOfJoining = System.DateTime.Now,
-                MartialStatus = 1,
-                IsEligibleForLoan = true,
-                Salary = 15000.00m,
-                CreatedBy = "Admin",
-                CreatedDate = System.DateTime.Now
+                new Employee()
+                {
+                    EmployeeID = 1,
+                    EmployeeName = "Marius Antohi",
+                    DateOfJoining = System.DateTime.Now,
+                    MartialStatus = 1,
+                    IsEligibleForLoan = true,
+                    Salary = 15000.00m,
+                    CreatedBy = "Admin",
+                    CreatedDate = System.DateTime.Now
+                },
+                new Employee()
+                {
+                    EmployeeID = 2,
+                    EmployeeName = "Ihutiu Bogdan",
+                    DateOfJoining = System.DateTime.Now,
+                    MartialStatus = 1,
+                    IsEligibleForLoan = true,
+                    Salary = 15000.00m,
+                    CreatedBy = "Admin",
+                    CreatedDate = System.DateTime.Now
+                },
+                new Employee()
+                {
+                    EmployeeID = 3,
+                    EmployeeName = "Pripici Stefan",
+                    DateOfJoining = System.DateTime.Now,
+                    MartialStatus = 1,
+                    IsEligibleForLoan = true,
+                    Salary = 15000.00m,
+                    CreatedBy = "Admin",
+                    CreatedDate = System.DateTime.Now
+                },
+                new Employee()
+                {
+                    EmployeeID = 4,
+                    EmployeeName = "Florin Straton",
+                    DateOfJoining = System.DateTime.Now,
+                    MartialStatus = 1,
+                    IsEligibleForLoan = true,
+                    Salary = 15000.00m,
+                    CreatedBy = "Admin",
+                    CreatedDate = System.DateTime.Now
+                }
             };
 
-            ViewBag.Employee = employee;
+            ViewBag.Employees = employees;
             return View();
         }
     }
